@@ -13,9 +13,9 @@ uncomment the call for the testSum() function below and check the console to see
 
 // Write your code here
 function sum(a, b) {  //eslint-disable-line
-    let sum = a + b;
-    console.log(sum);
-    return [sum, `The sum of 4 and 7 is 11.`];
+  let sum = a + b;
+ // console.log(sum);
+  return [sum, `The sum of 4 and 7 is 11.`];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -37,7 +37,7 @@ uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    return [a * b, `The product of ${a} and ${b} is ${a * b}.`];
+  return [a * b, `The product of ${a} and ${b} is ${a * b}.`];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -66,22 +66,22 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 
-    // return[a+b, `${a} and ${b} and ${c} is ${a+b+c}.`],
+  // return[a+b, `${a} and ${b} and ${c} is ${a+b+c}.`],
 
-    // [a*b*c, `The product of ${a} and ${b} and ${c} is ${a*b*c}.`];
-    let sumOfaAndb = sum(a, b);
-    // console.log(sumOfaAndb);
-    let sumOfaAndbAndc = sum(sumOfaAndb[0], c)[0];
-    console.log(sumOfaAndbAndc);
-    let string_sum = `${a} and ${b} and ${c} sum to ${sumOfaAndbAndc}.`;
-    // console.log(string_sum);
+  // [a*b*c, `The product of ${a} and ${b} and ${c} is ${a*b*c}.`];
+  let sumOfaAndb = sum(a, b);
+  // console.log(sumOfaAndb);
+  let sumOfaAndbAndc = sum(sumOfaAndb[0], c)[0];
+  // console.log(sumOfaAndbAndc);
+  let string_sum = `${a} and ${b} and ${c} sum to ${sumOfaAndbAndc}.`;
+  // console.log(string_sum);
 
-    let multaAndb = multiply(a, b);
-    let multaAndbAndc = multiply(multaAndb[0], c)[0];
-    // console.log(multaAndbAndc);
-    let string_mult = `The product of ${a} and ${b} and ${c} is ${multaAndbAndc}.`;
-    // console.log (string_mult);
-    return [sumOfaAndbAndc, multaAndbAndc, string_sum, string_mult]
+  let multaAndb = multiply(a, b);
+  let multaAndbAndc = multiply(multaAndb[0], c)[0];
+  // console.log(multaAndbAndc);
+  let string_mult = `The product of ${a} and ${b} and ${c} is ${multaAndbAndc}.`;
+  // console.log (string_mult);
+  return [sumOfaAndbAndc, multaAndbAndc, string_sum, string_mult];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -108,13 +108,13 @@ function and see if the test passes.*/
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-let result = 0;
-for (let i = 0; i < sumArr.length; i++) {
+  let result = 0;
+  for (let i = 0; i < sumArr.length; i++) {
     result = sum(sumArr[i], result) [0];
-    console.log(sumArr);
-    console.log(result);
-}
-return [result, `${sumArr} was passed in as an array of numbers, and ${result} is their sum.`];
+   // console.log(sumArr);
+   // console.log(result);
+  }
+  return [result, `${sumArr} was passed in as an array of numbers, and ${result} is their sum.`];
 
 }
 
@@ -122,25 +122,38 @@ return [result, `${sumArr} was passed in as an array of numbers, and ${result} i
 
 testSumArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Don't forget to create a new branch for your work on the next question!
+
+
+
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element 
+is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were 
+input into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function 
+that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle 
+an array containing three elements. However, you may continue to use the + operator for string concatenation.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
+Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the 
+testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let result = 1;
+  for (let i = 0; i < multArr.length; i++) {
+    result = multiply(multArr[i], result)[0];
+  }
+  return [result, `The numbers ${multArr} have a product of ${result}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray); 
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
